@@ -1,4 +1,7 @@
-<li>
-	{{burger_name}}
-	<button class="devoured" data-id="{{this.id}}" data-newdevouredstate="{{eaten}}">{{#if eaten}}Eaten!{{else}}Eat?{{/if}}</button>
+<li class=" burgers-before">
+	<span class="burger-name">
+		{{burger_name}}
+	</span>
+
+	<button class="devoured btn btn-primary btn-lg" data-id="{{this.id}}" data-newdevouredstate="{{eaten}}">{{#if eaten}}Eat It?{{else}}{{/if}}</button>
 </li>
