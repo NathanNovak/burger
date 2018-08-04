@@ -1,21 +1,28 @@
 body{
-	background-image: url("../img/burger.jpg"); 
+	background: url("../img/burger.jpg")no-repeat center center fixed; 
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+	background-size: cover; 
 }
 
-p, h1{
+p {
 	font-size: 65px;
 	font-family: 'Acme', sans-serif;
+	margin-top: 4px;
 }
 .add-a-burger{
 	margin-top: 33px;
 }
 
-.container{
-	align-content: center;
+.burger-input-name{
+	font-size: 65px;
+	font-family: 'Acme', sans-serif;
+	margin-top: 4px;
 }
 
 .devoured{
-	margin-left: 40%;
+	margin-left: 127px;
 }
 
 .burgers-before{
@@ -24,12 +31,23 @@ p, h1{
 	background-color: transparent;
 }
 
-.burger-name{
-
+.burger-area{
+	margin-top: 45px;
+	border-bottom: black;
+	border-width: thick;
+	border-bottom-style: dashed;
+	width: 60%;
 }
 
 .burger-input{
 	height: 75px;
 	width: 75%;
 	font-size: 48px;
+}
+
+.header{
+	font-family: 'Knewave', cursive;
+	text-align: center;
+	font-size: 150px;
+	margin-bottom: 70px;
 }

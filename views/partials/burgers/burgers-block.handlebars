@@ -1,7 +1,8 @@
-<li class=" burgers-before">
-	<span class="burger-name">
+<tr class=" burgers-before">
+	<td class="burger-name">
 		{{burger_name}}
-	</span>
-
-	<button class="devoured btn btn-primary btn-lg" data-id="{{this.id}}" data-newdevouredstate="{{eaten}}">{{#if eaten}}Eat It?{{else}}{{/if}}</button>
-</li>
+	</td>
+	<td>
+		<button class="devoured btn btn-primary btn-lg" data-id="{{this.id}}" data-newdevouredstate="{{eaten}}">{{#if eaten}}Eat It?{{else}}{{/if}}</button>
+	</td>
+</tr>

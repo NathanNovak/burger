@@ -8,6 +8,7 @@ $(function(){
 			
 		};
 		console.log("VAL of burger", newBurger);
+
 		$.ajax("/api/burgers", {
 			type: "POST",
 			data: newBurger
