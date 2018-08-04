@@ -10,13 +10,14 @@ var burger = {
 	insertOne: function(col, val, cb){
 		console.log(col, val);
 		orm.insertOne("burgers", col, val, function(res){
-			console.log("InsertOne:", res);
+			// console.log("InsertOne:", res);
 			cb(res);
 		});
 	},
 
 	updateOne: function(ob, condition, cb){
 		orm.updateOne("burgers", ob, condition, function(res){
+			console.log("UPDATE RES", res);
 			cb(res);
 		});
 	}

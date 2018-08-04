@@ -1,79 +1,46 @@
 <h1>EAT-DA-BURGER!</h1>
 
-<form class="create-form">
+<form class="container jumbotron create-form">
 	<div>
 		<label for="newBurger">New Burger</label>
 		<input type="text" id="newBurger" name="burger_name">
 	</div>
-	<button type="submit">Add A Burger</button>
+	<button class="add-a-burger btn btn-primary btn-lg"type="submit">Add A Burger</button>
 </form>
 
-
+<div class="container jumbotron">
 	Burgers:
 	<br> 
 	<br>
 	<ul>
 		{{#each burgers}}
-		{{#if devoured}}
-			{{> burgers/burgers-block eaten = false}}
-		{{/if}}	
+			{{#unless devoured}}
+			{{> burgers/burgers-block eaten = true}}
+			{{/unless}}
 		{{/each}}
 	</ul>
 	
 </ul>
+</div>
 
+<div class="container jumbotron">
 Devoured Burgers:
 <br> 
 	<br>
 	<ul>
 	  {{#each burgers}}
-		{{#if devoured}}
-			{{> burgers/burgers-block eaten = true}}
+		{{#if devoured }}
+		<li>
+			{{burger_name}}
+		</li>
 		{{/if}}	
 		{{/each}}
 	</ul>
+</div>
+
 
 
 
 <script>
-	$(function(){
 
-	$('.create-form').on('submit', function(event){
-		event.preventDefault();
-		
-		var newBurger ={
-			burger_name: $("#newBurger").val().trim()
-		};
-		console.log("VAL of burger", newBurger);
-		$.ajax("/api/burgers", {
-			type: "POST",
-			data: newBurger
-		}).then(function(data){
-			console.log("NEW BURGER", data);
-
-		});
-	});
-
-	$(".devoured").on("click", function(id){
-		var id = $(this).data("id");
-		var newDevouredState = $(this).data("newDevouredState");
-		
-		console.log("id", id);
-
-		var newChowedDown = {
-			devoured: newDevouredState
-		}
-		console.log("newDevouredState", newDevouredState);
-		console.log("newChowedDown", newChowedDown);
-
-		$.ajax("/api/burgers/" +id, {
-			type:"PUT",
-			data: newChowedDown
-		}	
-		).then(function(newDevouredState){
-					console.log("newDevouredState after AJAX", newDevouredState);
-
-		})
-	})
-});
 </script>
