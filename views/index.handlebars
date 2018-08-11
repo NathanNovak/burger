@@ -8,7 +8,7 @@
 	</div>
 	<button class="add-a-burger btn btn-primary btn-lg" type="submit">Add A Burger</button>
 </form>
-<div class="container">
+<div class="container">	
 	<p class="burger-area">Burgers:</p><hr>
 	<table>
 		{{#each burgers}} {{#unless devoured}} {{> burgers/burgers-block eaten = true}} {{/unless}} {{/each}}
